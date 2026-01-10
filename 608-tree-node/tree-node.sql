@@ -1,13 +1,11 @@
-# Write your MySQL query statement below
-SELECT 
+SELECT
     t.id,
     CASE
         WHEN t.p_id IS NULL THEN 'Root'
-        WHEN t.id NOT IN (
-            SELECT DISTINCT p_id 
-            FROM Tree 
-            WHERE p_id IS NOT NULL
-        ) THEN 'Leaf'
-        ELSE 'Inner'
+        WHEN COUNT(c.id) > 0 THEN 'Inner'
+        ELSE 'Leaf'
     END AS type
-FROM Tree t;
+FROM Tree t
+LEFT JOIN Tree c
+    ON t.id = c.p_id
+GROUP BY t.id, t.p_id;
