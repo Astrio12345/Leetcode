@@ -1,2 +1,2 @@
 # Leetcode
-Leetcode question Solutions by me.
+Leetcode questions solutions by me.
