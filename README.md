@@ -1,5 +1,5 @@
 # Leetcode
 Leetcode questions solutions by me.
  
- leetcode.com
+ www.leetcode.com
 
